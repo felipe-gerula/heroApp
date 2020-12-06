@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Crear Nuevo Heroes</h1>
+    <h1>Crear Heroe</h1>
 
     <form action="{{ route('admin.heroes.store') }}" method="post">
         <div class="form-group">

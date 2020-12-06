@@ -21,7 +21,10 @@ Route::group(['prefix' => 'admin'],function(){
     Route::group(['prefix' => 'heroes'],function(){
         Route::get('/','HeroController@index')->name('admin.heroes');
         Route::get('create','HeroController@create')->name('admin.heroes.create');
-        Route::post('store','HeroController@store')->name('admin.heroes.store');        
+        Route::post('store','HeroController@store')->name('admin.heroes.store'); 
+        Route::get('edit/{id}','HeroController@edit')->name('admin.heroes.edit'); 
+        Route::post('update/{id}','HeroController@update')->name('admin.heroes.update');
+        Route::post('destroy/{id}','HeroController@destroy')->name('admin.heroes.destroy');           
     });    
 
     Route::get('items','ItemController@index')->name('admin.items');

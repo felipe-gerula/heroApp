@@ -22,6 +22,7 @@
                     <th scope="col">Suerte</th>
                     <th scope="col">Monedas</th>
                     <th scope="col">XP</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +36,18 @@
                         <td>{{$hero->luck}}</td>
                         <td>{{$hero->coins}}</td>
                         <td>{{$hero->xp}}</td>
+                        <td>
+                            <div class="row">
+                                <div class="col">
+                                <a href="{{ route('admin.heroes.edit',['id'=>$hero->id]) }}" class="btn btn-primary">Modificar</a>
+                                </div>
+                                <div class="col">
+                                    <form action="{{ route('admin.heroes.destroy',['id'=>$hero->id]) }}" method="post">
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
                     </tr>    
                 @endforeach
             </tbody>
