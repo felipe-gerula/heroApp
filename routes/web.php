@@ -36,7 +36,14 @@ Route::group(['prefix' => 'admin'],function(){
         Route::post('destroy/{id}','ItemController@destroy')->name('admin.items.destroy'); 
     });  
     
+    Route::group(['prefix' => 'enemies'],function(){
+        Route::get('/','EnemyController@index')->name('admin.enemies');
+        Route::get('create','EnemyController@create')->name('admin.enemies.create');
+        Route::post('store','EnemyController@store')->name('admin.enemies.store'); 
+        Route::get('edit/{id}','EnemyController@edit')->name('admin.enemies.edit'); 
+        Route::post('update/{id}','EnemyController@update')->name('admin.enemies.update');
+        Route::post('destroy/{id}','EnemyController@destroy')->name('admin.enemies.destroy');
+    });
 
-    Route::get('enemies','EnemyController@index')->name('admin.enemies');
 });
 
