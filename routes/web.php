@@ -45,5 +45,7 @@ Route::group(['prefix' => 'admin'],function(){
         Route::post('destroy/{id}','EnemyController@destroy')->name('admin.enemies.destroy');
     });
 
+    Route::get('bs','BSController@index')->name('admin.bs');
+
 });
 
